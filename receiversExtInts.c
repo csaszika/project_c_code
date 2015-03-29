@@ -17,6 +17,11 @@ extern uint16_t time2;
 extern uint16_t speed;		//m/s
 extern uint32_t ballDiameter;	//nanometer KORREKCIÓ kell
 
+extern char oszlop0v4;
+extern char oszlop1v5;
+extern char oszlop2v6;
+extern char oszlop3v7;
+
 ////////////////////////////////////////////////////////TELJESEN NÉZD ÁT, EZ CSAK BEMÁSOLT ANYAG
 ISR(INT4_vect)
 {
@@ -41,4 +46,23 @@ ISR(INT7_vect)
 {
 	
 	
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////Pozíció korrekcióhoz////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+ISR(INT0_vect)
+{
+	oszlop0v4=1;
+}
+ISR(INT1_vect)
+{
+	oszlop1v5=1;
+}
+ISR(INT2_vect)
+{
+	oszlop2v6=1;
+}
+ISR(INT3_vect)
+{
+	oszlop3v7=1;
 }

@@ -104,6 +104,12 @@
     <Compile Include="clocksignsTimer.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="measurementErrorHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="measurementErrorHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="muxReader.c">
       <SubType>compile</SubType>
     </Compile>

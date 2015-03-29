@@ -16,7 +16,6 @@ void Timer2Init()//56kHz
 	
 	OCR2=142;
 	
-	TIMSK=0;
 	TIMSK|=(1<<OCIE2);//16MHz/(2*n*(1+OCR1A))=16MHz/2(in)/1(prescale)/(1+142)=55944,056Hz~56kHz
 
 	//TSUS5202 950nm,55,94kHz => TSOP4856 950nm,56kHz
@@ -27,7 +26,8 @@ void Timer0Init()//38kHz
 	TCCR0|=(1<<WGM01)|(0<<WGM00)|(1<<COM01)|(0<<COM00)|(0<<CS02 )|(0<<CS01)| (1<<CS00);
 
 	OCR0=210;//16MHz/(2*n*(1+OCR0))=16MHz/2(in)/1(prescale)/(1+25)=37914,7Hz~38kHz
-
+	
+	TIMSK=0;
 	TIMSK|=(1<<OCIE0);
 
 	//TSUS5202 950nm,37,91kHz => TSOP4838 950nm,38kHz
